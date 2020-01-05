@@ -1,7 +1,7 @@
 module.exports = {
     title: 'Layui组件增强',
     description: 'Layui组件增强',
-    base: "/layui_enhance",
+    base: "/layui_enhance/",
     markdown: {
         externalLinks: {
             target: '_blank',

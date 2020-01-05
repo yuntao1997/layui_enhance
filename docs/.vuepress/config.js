@@ -1,6 +1,7 @@
 module.exports = {
     title: 'Layui组件增强',
     description: 'Layui组件增强',
+    base: "/layui_enhance",
     markdown: {
         externalLinks: {
             target: '_blank',
@@ -33,6 +34,7 @@ module.exports = {
         nav: [
             { text: '指南', link: '/guide/' },
             { text: '源码下载', link: 'https://github.com/yuntao1997/layui_enhance' },
-        ]
+        ],
+        
     }
 }

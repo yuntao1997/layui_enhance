@@ -1,0 +1,87 @@
+/** =============================== 行编辑表格样式     开始===============================*/
+.row-editable-table + .layui-table-view .custom-input {
+    width: 100%;
+    margin: 0;
+    height: 28px;
+    border: 0px;
+    text-align: inherit;
+    padding-left: 0px;
+}
+.row-editable-table + .layui-table-view .custom-input.layui-form-danger:focus,
+.row-editable-table + .layui-table-view .layui-form-danger+.layui-form-select .layui-input,
+.layui-form-danger:focus{
+    border: 1px #FF5722 solid !important;;
+}
+
+.row-editable-table + .layui-table-view .layui-table-header .layui-table-cell {
+    height:28px;
+}
+.row-editable-table + .layui-table-view .layui-table-body .layui-table-cell  {
+    overflow: visible !important;
+}
+
+.row-editable-table + .layui-table-view .layui-table-box {
+    overflow: visible;
+}
+
+.row-editable-table + .layui-table-view layui-table-body {
+    overflow: visible;
+}
+
+.row-editable-table + .layui-table-view .layui-table-body .layui-table-cell .layui-select-title input  {
+    height: 28px;
+    border: 0px;
+    text-align: inherit;
+}
+
+/** =============================== 行编辑表格样式     结束===============================*/
+
+/** =============================== 表格样式     开始===============================*/
+
+
+.layui-table-tool .layui-table-tool-self .layui-inline[custom-event] {
+    margin: 0 0 0 10px;
+}
+.layui-table-tool .layui-inline[custom-event] {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    padding: 5px;
+    line-height: 16px;
+    margin-right: 10px;
+    text-align: center;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    -webkit-transition: .5s all;
+    transition: .5s all;
+}
+.layui-table-tool .layui-table-tool-self .layui-table-custom-tool-panel{
+    left: auto;
+    right: -1px;
+}
+.layui-table-custom-tool-panel{
+    position: absolute;
+    top: 29px;
+    left: -1px;
+    padding: 5px 0;
+    min-width: 150px;
+    min-height: 40px;
+    border: 1px solid #d2d2d2;
+    text-align: left;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.12)
+}
+.layui-table-custom-tool-panel li {
+    padding: 0 10px;
+    line-height: 30px;
+    -webkit-transition: .5s all;
+    transition: .5s all;
+}
+.layui-table-cell, .layui-table-custom-tool-panel li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/** =============================== 表格样式     结束===============================*/

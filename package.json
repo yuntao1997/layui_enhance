@@ -1,0 +1,27 @@
+{
+  "name": "layui_enhance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuntao1997/layui_enhance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuntao1997/layui_enhance/issues"
+  },
+  "homepage": "https://github.com/yuntao1997/layui_enhance#readme",
+  "devDependencies": {
+    "vuepress-plugin-autobar": "github:boboidream/vuepress-bar"
+  }
+}

@@ -1,0 +1,84 @@
+<html>
+    <!-- 引入layui.css -->
+    <link rel="stylesheet" href="http://yuntao-demo.oss-cn-hongkong.aliyuncs.com/layui-enhance/layui/css/layui.css">
+    <!-- 引入enhance.css -->
+    <link rel="stylesheet" href="http://yuntao-demo.oss-cn-hongkong.aliyuncs.com/layui-enhance/enhance.css">
+    
+    <body>
+       <table id="listTable" lay-filter="listTable" class="row-editable-table"></table>
+    </body>
+    
+    
+    <!-- 引入layui.all.js-->
+    <script src="http://yuntao-demo.oss-cn-hongkong.aliyuncs.com/layui-enhance/layui/layui.js"></script>
+    
+     <!-- 引入enhance.js-->
+    <!-- <script src="http://yuntao-demo.oss-cn-hongkong.aliyuncs.com/layui-enhance/enhance.js"></script> -->
+    <script src="http://yuntao-demo.oss-cn-hongkong.aliyuncs.com/layui-enhance/enhance.module.js"></script>
+    
+    <script type="text/javascript">
+
+        layui.config({
+              base: './' //你的扩展模块所在目录
+        }).use(['enhance'], function(){
+            let $ = layui.jquery,table = layui.table 
+            let tableId = "listTable"
+            let dict = [
+                { value: 0, label: "下拉框0" },
+                { value: 1, label: "下拉框1" },
+                { value: 2, label: "下拉框2" },
+                { value: 3, label: "下拉框3" },
+            ]
+            let data = [
+                { input_val: "", number_val: null, checkbox_val: 0, select_val: "0", color_val: "#fff" },
+                { input_val: "文本框2", number_val: 50, checkbox_val: 1, select_val: "1", color_val: "#000" },
+                { input_val: "文本框3", number_val: 60, checkbox_val: 1, select_val: "2", color_val: "#2fe" },
+                { input_val: "文本框4", number_val: 10, checkbox_val: 0, select_val: "3", color_val: "#f2d" },
+            ]
+
+
+            let cols = [[
+                { type: 'numbers', fixed: 'center' },
+                { field: 'input_val', title: '文本框', editConfig: { form: "input", verify: "required", placeholder: "必填" } },
+                { field: 'number_val', title: '数值', editConfig: { form: "input", verify: "required|number", placeholder: "必填|数值" } },
+                { field: 'checkbox_val', title: '复选框', editConfig: { form: "checkbox" } },
+                { field: 'select_val', title: '下拉框', editConfig: { form: "select", dict } },
+                { field: 'select_val', title: '必选', editConfig: { form: "select", dict, verify: "required" } },
+                { field: 'color_val', title: '颜色框', editConfig: { form: "color" } },
+            ]]
+
+
+            table.render({
+                id: tableId,
+                elem: '#' + tableId,
+                height: 'full-130',
+                data,
+                cols,
+            });
+
+            // 监听表单元素改动
+            $editable.watch(tableId)
+
+            $("#operation-buttons .layui-btn").on('click', function () {
+                let layevent = this.getAttribute("lay-event");
+                if (layevent == 'get-first-data') {
+                    let data = table.getRows(tableId)[0]
+                    layer.success(JSON.stringify(data))
+                } else if (layevent == 'validate-first-data') {
+                    $editable.validateSingleRow(tableId, 0, (valid, error) => {
+                        if (!valid) {
+                            console.log(JSON.stringify(error))
+                        }
+                    })
+                } else if (layevent == 'validate-all-data') {
+                    $editable.validateAllRows(tableId, (valid, errors) => {
+                        if (!valid) {
+                            console.log(JSON.stringify(errors))
+                        }
+                    })
+                }
+            });
+        });
+        
+    </script>
+</html>

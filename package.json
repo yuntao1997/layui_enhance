@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/yuntao1997/layui_enhance#readme",
   "devDependencies": {
+    "vuepress": "^1.2.0",
     "vuepress-plugin-autobar": "github:boboidream/vuepress-bar"
   }
 }
